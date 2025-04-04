@@ -1,50 +1,94 @@
-# Welcome to your Expo app 👋
+# Noti-Fin - MoMo Payment Notification App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native application that connects to Bluetooth speakers to audibly announce MoMo e-wallet payment notifications.
 
-## Get started
+## Features
 
-1. Install dependencies
+- Connects to real Bluetooth speakers for audio announcements
+- Detects payment notifications (demo mode)
+- Announces payment details through connected speaker
+- Tracks received payment notifications
+- User-friendly interface for managing speaker connections
 
-   ```bash
+## Installation
+
+1. Clone the repository
+
+   ```
+   git clone https://github.com/yourusername/noti-fin.git
+   cd noti-fin
+   ```
+
+2. Install dependencies
+
+   ```
    npm install
    ```
 
-2. Start the app
+3. Install development client
 
-   ```bash
-    npx expo start
+   ```
+   npx expo install expo-dev-client
    ```
 
-In the output, you'll find options to open the app in a
+4. Build the app
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   ```
+   npx expo prebuild
+   ```
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+5. Run on a real device (recommended)
+   ```
+   npx expo run:android
+   ```
 
-## Get a fresh project
+## How to Connect a Bluetooth Speaker
 
-When you're ready, run:
+1. Make sure your Bluetooth speaker is turned on and in pairing mode
+2. On your Android device, first pair the speaker in the Bluetooth settings
+3. Open the Noti-Fin app
+4. Tap "Show Bluetooth Devices" to see your paired devices
+5. Select your Bluetooth speaker from the list to connect
+6. Tap "Test Speaker" to verify that audio works correctly
 
-```bash
-npm run reset-project
-```
+## Notification Integration
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+This app can work in two modes:
 
-## Learn more
+### Demo Mode
 
-To learn more about developing your project with Expo, look at the following resources:
+- Demonstrates how the app would work with real notifications
+- Use "Demo Payment" to simulate receiving a payment notification
+- The app will announce the payment through the connected Bluetooth speaker
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Real Implementation
 
-## Join the community
+- Real Bluetooth speaker connections
+- On first run, the app will request notification access permissions
+- For Android, you'll need to manually enable notification access in system settings
+- App will audibly announce MoMo payment notifications when they arrive
 
-Join our community of developers creating universal apps.
+## Troubleshooting Bluetooth
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+If you have trouble connecting to your Bluetooth speaker:
+
+1. Make sure the speaker is powered on and fully charged
+2. Ensure the speaker is in pairing mode (check your speaker's manual)
+3. Pair the speaker in your Android system settings first
+4. Check that your Android device has Bluetooth enabled
+5. Some speakers may require you to press a specific button to accept connections
+6. Try rebooting both the speaker and your phone if connection fails
+7. Make sure you are within range (typically 30 feet/10 meters) of the speaker
+
+## Notification Permission
+
+For notification detection to work properly:
+
+1. You need to grant notification access permission to the app
+2. Go to Settings > Apps > Special app access > Notification access
+3. Find "Noti-Fin" in the list and enable it
+4. You may need to restart the app after granting this permission
+
+## License
+
+This project is licensed under the MIT License.
